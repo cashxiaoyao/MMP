@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    width: 560px;
+    height: 380px;
+    margin: 100px auto;
+    position: relative; // transition: transform 1s;
+    ul {
+        width: 100%;
+        height: 100%;
+        list-style: none; 
+        // transform: rotate3d(1,1,0,-30deg);
+        // perspective: -10000px;
+        transform-style: preserve-3d; // transition: transform 1s;
+        li {
+            width: 20%;
+            height: 100%; // background-color: #ccc;
+            float: left;
+            position: relative;
+            transform-style: preserve-3d; //    background-size: 100% 100%;
+            transition: transform 0.5s;
+            span {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            span:nth-of-type(1) {
+                background-image: url("../images/01.jpg");
+                transform: translateZ(190px);
+            }
+            span:nth-of-type(2) {
+                background-image: url("../images/02.jpg");
+                transform: translateY(-190px) rotateX(90deg);
+            }
+            span:nth-of-type(3) {
+                background-image: url("../images/03.jpg");
+                transform: translateZ(-190px) rotateX(180deg);
+            }
+            span:nth-of-type(4) {
+                background-image: url("../images/04.jpg");
+                transform: translateY(190px) rotateX(-90deg);
+            }
+        }
+        li:nth-of-type(2) {
+            span {
+                background-position: -100% 0;
+            }
+        }
+        li:nth-of-type(3) {
+            span {
+                background-position: -200% 0;
+            }
+        }
+        li:nth-of-type(4) {
+            span {
+                background-position: -300% 0;
+            }
+        }
+        li:nth-of-type(5) {
+            span {
+                background-position: -400% 0;
+            }
+        }
+    }
+    div {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, .5);
+        cursor: pointer;
+    }
+    #left {
+        left: 20px;
+    }
+    #right {
+        right: -20px;
+    }
+}

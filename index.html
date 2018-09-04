@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <!-- <span></span> -->
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <!-- <span></span> -->
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <!-- <span></span> -->
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <!-- <span></span> -->
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <!-- <span></span> -->
+            </li>
+        </ul>
+        <div id="left">&lt;</div>
+        <div id="right">&gt;</div>
+    </div>
+</body>
+<script src="./js/jquery.js"></script>
+
+</html>
+<script>
+    $(function () {
+        // clearInterval(timer);
+        var index = 0;
+        var flag = true;
+        $('#right').on('click', function () {
+            if (flag == true) {
+                flag = false;
+                index--;
+                $('li').each(function (key, value) {
+                    $(this).css({
+                        "transform": "rotateX(" + (index * 90) + "deg)",
+                        "transition-delay": (key * 0.2) + "s"
+                    })
+                })
+                setTimeout(function () {
+                    flag = true;
+                }, 1000)
+            }
+        })
+        $('#left').on('click', function () {
+            if (flag == true) {
+                flag = false;
+                index++;
+                $('li').each(function (key, value) {
+                    $(this).css({
+                        "transform": "rotateX(" + (index * 90) + "deg)",
+                        "transition-delay": (key * 0.2) + "s"
+                    })
+                })
+                setTimeout(function () {
+                    flag = true;
+                }, 1000)
+            }
+        })
+            var timer = setInterval(function () {
+                $('#right').click();
+            }, 2000)
+           
+            // clearInterval(timer);
+            
+            $('.box').on('mouseenter', function () {
+                clearInterval(timer);
+            })
+            $('.box').on('mouseleave', function () {
+                timer = setInterval(function () {
+                    $('#right').click();
+                }, 2000)
+            })
+            // $(".box li").on("transitionend",function () {
+            //     clearInterval(timer);
+            // })
+            //     // console.log($(".box li"));
+            // $(".box li").on("transitionstart",function () {
+            //     timer = setInterval(function () {
+            //         $('#right').click();
+            //     }, 2000)
+            // })
+           
+    })
+</script>

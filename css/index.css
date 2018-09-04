@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.box {
+  width: 560px;
+  height: 380px;
+  margin: 100px auto;
+  position: relative;
+}
+
+.box ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.box ul li {
+  width: 20%;
+  height: 100%;
+  float: left;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.box ul li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box ul li span:nth-of-type(1) {
+  background-image: url("../images/01.jpg");
+  -webkit-transform: translateZ(190px);
+          transform: translateZ(190px);
+}
+
+.box ul li span:nth-of-type(2) {
+  background-image: url("../images/02.jpg");
+  -webkit-transform: translateY(-190px) rotateX(90deg);
+          transform: translateY(-190px) rotateX(90deg);
+}
+
+.box ul li span:nth-of-type(3) {
+  background-image: url("../images/03.jpg");
+  -webkit-transform: translateZ(-190px) rotateX(180deg);
+          transform: translateZ(-190px) rotateX(180deg);
+}
+
+.box ul li span:nth-of-type(4) {
+  background-image: url("../images/04.jpg");
+  -webkit-transform: translateY(190px) rotateX(-90deg);
+          transform: translateY(190px) rotateX(-90deg);
+}
+
+.box ul li:nth-of-type(2) span {
+  background-position: -100% 0;
+}
+
+.box ul li:nth-of-type(3) span {
+  background-position: -200% 0;
+}
+
+.box ul li:nth-of-type(4) span {
+  background-position: -300% 0;
+}
+
+.box ul li:nth-of-type(5) span {
+  background-position: -400% 0;
+}
+
+.box div {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.box #left {
+  left: 20px;
+}
+
+.box #right {
+  right: -20px;
+}
+/*# sourceMappingURL=index.css.map */
